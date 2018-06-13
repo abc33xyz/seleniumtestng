@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="parametertesting" verbose="1">
+<test name="Parameterization Testing">
+<!-- <parameter name="browsername" value="chrome" will pick the optional parameter if browser name is null >  -->
+<parameter name="browURL" value="http://opensource.demo.orangehrmlive.com/"/>
+<parameter name="userid" value="Admin"/>
+<parameter name="password" value="admin"/>
+<classes>
+ <class name="testngtut.orangehrmParameters"></class>
+ </classes>
+ </test>
+ </suite>
