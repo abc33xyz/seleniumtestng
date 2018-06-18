@@ -5,43 +5,396 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>MavenTestNGdemo</name>
   <description>try to test testng annotation in jennkins and maven</description>
-    <build>
-    <plugins>
-      <plugin>
-      <groupId>org.apache.maven.plugins</groupId> 
-      <artifactId>maven-compiler-plugin</artifactId> 
-      <version>3.7.0</version>
-    <configuration>
-         <source>1.8</source>
-         <target>1.8</target>
-    </configuration>
-     </plugin>
- <plugin>
-      <groupId>org.apache.maven.plugins</groupId> 
-      <artifactId>maven-surefire-plugin</artifactId> 
-      <version>2.21.0</version>
-      <inherited>true</inherited>
-    <configuration>
-       <suiteXmlFiles>
-       <suiteXmlFile>parameter.xml</suiteXmlFile>
-       </suiteXmlFiles>
-    </configuration>
-     </plugin>
-     </plugins>
-     </build>
-   <dependencies>
-   <dependency>
-      <groupId>org.seleniumhq.selenium</groupId> 
-      <artifactId>selenium-java</artifactId> 
-      <version>3.12.0</version>
-      <scope>test</scope> 
-  </dependency>
-  <dependency>
-      <groupId>org.testng</groupId> 
-      <artifactId>testng</artifactId> 
-      <version>6.14.3</version>
-      <scope>test</scope> 
-  </dependency>
+   <properties>
+    <!-- github server corresponds to entry in ~/.m2/settings.xml -->
+    <github.global.server>github</github.global.server>
+   </properties>
+
+  <dependencies>
+
+  <!-- selenium maven dependencies -->
+
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+
+<dependency>
+
+    <groupId>org.seleniumhq.selenium</groupId>
+
+    <artifactId>selenium-java</artifactId>
+
+    <version>3.12.0</version>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
+
+<dependency>
+
+    <groupId>org.seleniumhq.selenium</groupId>
+
+    <artifactId>selenium-server</artifactId>
+
+    <version>3.12.0</version>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
+
+<dependency>
+
+    <groupId>org.seleniumhq.selenium</groupId>
+
+    <artifactId>selenium-api</artifactId>
+
+    <version>3.12.0</version>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
+
+<dependency>
+
+    <groupId>org.seleniumhq.selenium</groupId>
+
+    <artifactId>selenium-firefox-driver</artifactId>
+
+    <version>3.12.0</version>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
+
+<dependency>
+
+    <groupId>org.seleniumhq.selenium</groupId>
+
+    <artifactId>selenium-support</artifactId>
+
+    <version>3.12.0</version>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
+
+<dependency>
+
+    <groupId>org.seleniumhq.selenium</groupId>
+
+    <artifactId>selenium-remote-driver</artifactId>
+
+    <version>3.12.0</version>
+
+</dependency>
+
+  <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j -->
+
+<dependency>
+
+    <groupId>org.apache.logging.log4j</groupId>
+
+    <artifactId>log4j</artifactId>
+
+    <version>2.11.0</version>
+
+    <type>pom</type>
+
+</dependency>
+
+  
+
+<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+
+<dependency>
+
+    <groupId>javax.mail</groupId>
+
+    <artifactId>mail</artifactId>
+
+    <version>1.4.7</version>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+
+<dependency>
+
+    <groupId>com.relevantcodes</groupId>
+
+    <artifactId>extentreports</artifactId>
+
+    <version>2.41.2</version>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
+
+<dependency>
+
+    <groupId>org.uncommons</groupId>
+
+    <artifactId>reportng</artifactId>
+
+    <version>1.1.4</version>
+
+    <scope>test</scope>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
+
+<dependency>
+
+    <groupId>com.google.inject</groupId>
+
+    <artifactId>guice</artifactId>
+
+    <version>4.2.0</version>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+
+<dependency>
+
+    <groupId>mysql</groupId>
+
+    <artifactId>mysql-connector-java</artifactId>
+
+    <version>8.0.11</version>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc14
+
+This can't be directly install because Oracle has put some license and agreements.
+
+ So we have to download it manually and install it to the 
+
+ project. Use this link to choose the version you need 
+
+ and download the ojdbc14.jar file. You must have an 
+
+ Oracle account to download it.
+
+Then open the command prompt. 
+
+Go to the file download location.
+
+Then enter below code.
+
+mvn install:install-file -DgroupId=com.oracle 
+
+-DartifactId=ojdbc14 -Dversion=10.2.x.x.x
+
+ -Dpackaging=jar -Dfile=ojdbc14.jar -DgeneratePom=true
+
+ -->
+
+ <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+
+<dependency>
+
+    <groupId>org.apache.poi</groupId>
+
+    <artifactId>poi</artifactId>
+
+    <version>3.17</version>
+
+</dependency>
+
+ 
+
+ <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+
+<dependency>
+
+    <groupId>org.apache.poi</groupId>
+
+    <artifactId>poi-ooxml</artifactId>
+
+    <version>3.17</version>
+
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+
+<dependency>
+
+    <groupId>org.seleniumhq.selenium</groupId>
+
+    <artifactId>selenium-chrome-driver</artifactId>
+
+    <version>3.12.0</version>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
+
+<dependency>
+
+    <groupId>dom4j</groupId>
+
+    <artifactId>dom4j</artifactId>
+
+    <version>1.6.1</version>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+
+<dependency>
+
+    <groupId>org.testng</groupId>
+
+    <artifactId>testng</artifactId>
+
+    <version>6.14.2</version>
+
+    <scope>test</scope>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/junit/junit -->
+
+<dependency>
+
+    <groupId>junit</groupId>
+
+    <artifactId>junit</artifactId>
+
+    <version>4.12</version>
+
+    <scope>test</scope>
+
+</dependency>
+
   </dependencies>
+<!-- configure the site-maven-plugin to upload from your temporary staging repo -->
+<distributionManagement>
+    <repository>
+        <id>internal.repo</id>
+        <name>Temporary Staging Repository</name>
+        <url>file://${project.build.directory}/mvn-repo</url>
+    </repository>
+</distributionManagement>
+
+   <build>
+
+   <resources>
+
+     <resource>
+
+     <directory>src/test/resources/excel</directory>
+
+     <includes>
+
+     <include>**/*.xlsx</include>
+
+     <include>**/*.xls</include>
+
+     </includes>
+
+    </resource>
+
+   </resources>
+
+    <pluginManagement>
+
+    <plugins>
+
+      <plugin>
+
+      <groupId>org.apache.maven.plugins</groupId> 
+
+      <artifactId>maven-compiler-plugin</artifactId> 
+
+      <version>3.7.0</version>
+
+       <configuration>
+
+         <source>1.8</source>
+
+         <target>1.8</target>
+
+    </configuration>
+
+     </plugin>
+
+ <plugin>
+
+      <groupId>org.apache.maven.plugins</groupId> 
+
+      <artifactId>maven-surefire-plugin</artifactId> 
+
+      <version>2.21.0</version>
+
+      <inherited>true</inherited>
+
+    <configuration>
+
+     <suiteXmlFiles>
+    <!--
+      <suiteXmlFile>parameter.xml</suiteXmlFile>
+
+     <suiteXmlFile>testng.xml</suiteXmlFile> -->
+
+       </suiteXmlFiles>
+
+    </configuration> 
+
+     </plugin>
+        <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.8.2</version>
+        <configuration>
+            <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-
+
+repo</altDeploymentRepository>
+        </configuration>
+        </plugin>
+         <plugin>
+            <groupId>com.github.github</groupId>
+            <artifactId>site-maven-plugin</artifactId>
+            <version>0.9</version>
+            <configuration>
+                <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
+                <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
+                <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution 
+
+management repository url above -->
+                <branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
+                <includes><include>**/*</include></includes>
+                <merge>true</merge>                                        <!-- don't delete old artifacts -->
+                <repositoryName>MavenTestngproj.git</repositoryName>      <!-- github repo name -->
+                <repositoryOwner>sbhuiyan98</repositoryOwner>    <!-- github username  -->
+            </configuration>
+            <executions>
+              <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
+              <execution>
+                <goals>
+                  <goal>site</goal>
+                </goals>
+                <phase>deploy</phase>
+              </execution>
+            </executions>
+        </plugin>
+
+     </plugins>
+
+  </pluginManagement>
+
+  </build>
+
+  <repositories>
+    <repository>
+        <id>MavenTestngproj-mvn-repo</id>
+        <url>https://raw.github.com/sbhuiyan/MavenTestngproj/mvn-repo/</url>
+        <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+        </snapshots>
+    </repository>
+ </repositories>
   
 </project>
