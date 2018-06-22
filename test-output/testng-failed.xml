@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [parametertesting]">
+  <test thread-count="5" name="Parameterization Testing(failed)">
+    <parameter name="password" value="admin"/>
+    <parameter name="browURL" value="http://opensource.demo.orangehrmlive.com/"/>
+    <parameter name="userid" value="Admin"/>
     <classes>
-      <class name="testngtut.orangehrmParameters">
+      <class name="com.w2a.testcases.badweblink">
         <methods>
-          <include name="setUP"/>
-          <include name="afterMethod"/>
-          <include name="loginhrmlive"/>
+          <include name="runbadlink"/>
+          <include name="setup"/>
+          <include name="Quit"/>
         </methods>
-      </class> <!-- testngtut.orangehrmParameters -->
+      </class> <!-- com.w2a.testcases.badweblink -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Parameterization Testing(failed) -->
+</suite> <!-- Failed suite [parametertesting] -->

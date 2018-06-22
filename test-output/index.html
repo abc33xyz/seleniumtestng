@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-parametertesting">
-                    <span>C:\Users\505379\eclipse-workspace\MavenTestingproj\parameter.xml</span>
+                    <span>C:\Users\505379\git\seleniumtestng\parameter.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,12 @@
                     <div class="method-list-content passed suite-parametertesting">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-parametertesting" title="testngtut.orangehrmParameters" hash-for-method="loginhrmlive(Admin, admin)">loginhrmlive(Admin, admin)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-parametertesting" title="com.w2a.testcases.orangehrmParameters" hash-for-method="loginhrmlive(Admin, admin)">loginhrmlive(Admin, admin)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-parametertesting" title="com.w2a.testcases.badweblink" hash-for-method="runbadlink">runbadlink</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-parametertesting -->
@@ -120,7 +125,22 @@
           <div class="suite-parametertesting-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">testngtut.orangehrmParameters</span>
+              <span class="class-name">com.w2a.testcases.badweblink</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runbadlink">
+                  </a> <!-- runbadlink -->
+                  <span class="method-name">runbadlink</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-parametertesting-class-passed -->
+          <div class="suite-parametertesting-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.w2a.testcases.orangehrmParameters</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -136,7 +156,7 @@
         </div> <!-- panel parametertesting -->
         <div panel-name="test-xml-parametertesting" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\505379\eclipse-workspace\MavenTestingproj\parameter.xml</span>
+            <span class="header-content">C:\Users\505379\git\seleniumtestng\parameter.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -148,7 +168,8 @@
     &lt;parameter name=&quot;browURL&quot; value=&quot;http://opensource.demo.orangehrmlive.com/&quot;/&gt;
     &lt;parameter name=&quot;userid&quot; value=&quot;Admin&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testngtut.orangehrmParameters&quot;/&gt;
+      &lt;class name=&quot;com.w2a.testcases.orangehrmParameters&quot;/&gt;
+      &lt;class name=&quot;com.w2a.testcases.badweblink&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Parameterization Testing --&gt;
 &lt;/suite&gt; &lt;!-- parametertesting --&gt;
@@ -162,7 +183,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Parameterization Testing (1 class)</span>
+                <span class="test-name">Parameterization Testing (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -188,16 +209,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'loginhrmlive')
-data.setCell(0, 2, 'testngtut.orangehrmParameters')
-data.setCell(0, 3, 1253);
+data.setCell(0, 1, 'runbadlink')
+data.setCell(0, 2, 'com.w2a.testcases.badweblink')
+data.setCell(0, 3, 31819);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'loginhrmlive')
+data.setCell(1, 2, 'com.w2a.testcases.orangehrmParameters')
+data.setCell(1, 3, 1294);
 window.suiteTableData['parametertesting']= { tableData: data, tableDiv: 'times-div-parametertesting'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
+              <span class="suite-total-time">Total running time: 33 seconds</span>
               <div id="times-div-parametertesting">
               </div> <!-- times-div-parametertesting -->
             </div> <!-- times-div -->
@@ -223,18 +248,39 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testngtut.orangehrmParameters</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.w2a.testcases.badweblink</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">setup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.w2a.testcases.orangehrmParameters</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setUP(, http://opensource.demo.orangehrmlive.com/)</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-start">21 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">loginhrmlive(Admin, admin)</span>
-                <span class="method-start">3886 ms</span>
+                <span class="method-start">5567 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.w2a.testcases.badweblink</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">runbadlink</span>
+                <span class="method-start">6876 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
-                <span class="method-name">afterMethod</span>
-                <span class="method-start">5142 ms</span>
+                <span class="method-name">Quit</span>
+                <span class="method-start">38701 ms</span>
+              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.w2a.testcases.orangehrmParameters</div> <!-- chronological-class-name -->
+              <div class="configuration-test after">
+                <span class="method-name">Quit</span>
+                <span class="method-start">39650 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

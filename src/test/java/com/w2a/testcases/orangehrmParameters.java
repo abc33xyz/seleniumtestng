@@ -4,11 +4,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
-
-
 public class orangehrmParameters {
 	WebDriver driver;
-	String driverPath="C:/usb/";
+	String driverPath="C:/browdriv/";
    // String browURL="http://opensource.demo.orangehrmlive.com/";
   @BeforeTest
   @Parameters({"browsername","browURL"})
@@ -48,7 +46,7 @@ public class orangehrmParameters {
 	logbutt.click();
   }
   @AfterTest
-  public void afterMethod() {
+  public void Quit() {
 	  driver.quit();
   }
 

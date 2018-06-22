@@ -7,7 +7,8 @@
 <parameter name="userid" value="Admin"/>
 <parameter name="password" value="admin"/>
 <classes>
- <class name="testngtut.orangehrmParameters"></class>
+ <class name="com.w2a.testcases.orangehrmParameters"></class>
+ <class name="com.w2a.testcases.badweblink"></class>
  </classes>
  </test>
  </suite>
